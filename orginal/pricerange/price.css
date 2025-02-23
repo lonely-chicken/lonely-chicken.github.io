@@ -1,14 +1,12 @@
-input,
-select,
-button,
-textarea {
+.inputprice
+ {
   font-family: inherit;
   color: var(--fg);
   background: var(--b);
   padding: 0.875em;
   border-radius: 8px;
   width: clamp(50%, 20em, 100%);
-  border: 1px solid transparent;
+
   outline: 1px solid transparent;
   accent-color: var(--tint2);
   box-shadow: 0 3px 2px -3px var(--bor);
