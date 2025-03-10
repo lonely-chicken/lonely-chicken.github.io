@@ -545,17 +545,13 @@
 
                 <div class="col-12">
                   <div class="form-floating">
-                    <div class="dropdown">
-                      <input class="text-box" type="text" placeholder="Select on" readonly>
-                      <div class="options">
-                        <div onclick="show('HTML')"><ion-icon name="logo-html5"></ion-icon>HTML</div>
-                        <div onclick="show('CSS')"><ion-icon name="logo-css3"></ion-icon>CSS</div>
-                        <div onclick="show('Javascript')"><ion-icon name="logo-javascript"></ion-icon>Javascript</div>
-                        <div onclick="show('Angular')"><ion-icon name="logo-angular"></ion-icon>Angular</div>
-                        <div onclick="show('React')"><ion-icon name="logo-react"></ion-icon>React</div>
-                        <div onclick="show('Vue')"><ion-icon name="logo-vue"></ion-icon>Vue</div>
-                      </div>
-                    </div>
+                    <select class="select-opt" id="sel-opt">
+                      <option value="sort-by">Sort by</option>
+                      <option value="price">Price</option>
+                      <option value="mark">Mark</option>
+                      <option value="size">Size</option>
+                      <option value="weight">Weight</option>
+                  </select>
                   </div>
                 </div>
 
