@@ -1,72 +1,62 @@
-var x, i, j, selElmnt, a, b, c;
-/*look for any elements with the class "custom-select":*/
-x = document.getElementsByClassName("custom-select");
-for (i = 0; i < x.length; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
-  /*for each element, create a new DIV that will act as the selected item:*/
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
-  /*for each element, create a new DIV that will contain the option list:*/
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 1; j < selElmnt.length; j++) {
-    /*for each option in the original select element,
-    create a new DIV that will act as an option item:*/
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        h.click();
-    });
-    b.appendChild(c);
+var theSelect = document.querySelector('#sel-opt');
+var wrapper = document.createElement('div');
+wrapper.classList.add('custom-select-wrapper');
+var customSelect = document.createElement('div');
+customSelect.classList.add('custom-select');
+var customSelectTrigger = document.createElement('div');
+customSelectTrigger.classList.add('custom-select__trigger');
+var spanText = document.createElement('span');
+spanText.textContent = 'Sort By';
+var arrow = document.createElement('div');
+arrow.classList.add('arrow');
+customSelectTrigger.append(spanText, arrow);
+customSelect.append(customSelectTrigger);
+var customOptions = document.createElement('div');
+customOptions.classList.add('custom-options');
+var selectOptions = document.querySelectorAll('option');
+for(var opt = 0; opt < selectOptions.length; opt++){
+  var optSpan = document.createElement('span');
+  optSpan.classList.add('custom-option');
+  if(!opt){
+    optSpan.classList.add('selected', 'hidden');
   }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      // this.classList.toggle("select-arrow-active");
+  var thisVal = selectOptions[opt].value;
+  var thisText = selectOptions[opt].textContent;
+  optSpan.textContent = thisText;
+  optSpan.setAttribute('data_value', thisVal);
+  customOptions.append(optSpan);
+}
+customSelect.append(customOptions);
+wrapper.append(customSelect);
+var par = theSelect.parentNode;
+par.append(wrapper);
+
+document.querySelector('.custom-select-wrapper').addEventListener('click', function() {
+    this.querySelector('.custom-select').classList.toggle('open');
+})
+var option = document.querySelectorAll(".custom-option");
+for (var i = 0; i < option.length; i++) {
+    option[i].addEventListener('click', function() {
+            this.parentNode.querySelector('.custom-option.selected').classList.remove('selected');
+            this.classList.add('selected');
+            this.closest('.custom-select').querySelector('.custom-select__trigger span').textContent = this.textContent;
     });
 }
-function closeAllSelect(elmnt) {
-  /*a function that will close all select boxes in the document,
-  except the current select box:*/
-  var x, y, i, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  for (i = 0; i < y.length; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
+window.addEventListener('click', function(e) {
+    var select = document.querySelector('.custom-select');
+    if (!select.contains(e.target)) {
+        select.classList.remove('open');
     }
-  }
-  for (i = 0; i < x.length; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
-}
-/*if the user clicks anywhere outside the select box,
-then close all select boxes:*/
-document.addEventListener("click", closeAllSelect);
+});
+
+ document.querySelector(".custom-select-wrapper").addEventListener('click', function(){
+  var choosenOption = document.querySelector(".selected").getAttribute('data-value');
+   var optionsSel = document.querySelectorAll('option');
+   for(var j = 0; j < optionsSel.length; j++){
+     if(optionsSel[j].value == choosenOption){
+       optionsSel[j].selected = true;
+       // alert(optionsSel[j].value);
+     }
+   }
+ });
+  
