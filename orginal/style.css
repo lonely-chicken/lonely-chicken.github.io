@@ -1435,11 +1435,11 @@ input[type=range].lower::-webkit-slider-runnable-track {
 }
  .custom-option:hover {
      cursor: pointer;
-color: #00ffff;
+
 }
  .custom-option.selected {
-     color: white;
-     color: #00ff80;
+
+     color: #00ffff;
    opacity: 0.8;
 }
 .arrow {
