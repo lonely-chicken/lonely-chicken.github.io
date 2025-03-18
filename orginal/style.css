@@ -800,7 +800,7 @@ border: none !important;
   color: #ffd040 !important;
 }
 .numbermoney{
-  color:#00ffff;
+  color:#00ff80;
 }
 .cardicon{
   color: #ffffff !important;
@@ -1390,13 +1390,13 @@ input[type=range].lower::-webkit-slider-runnable-track {
      padding: 0 22px;
      font-size: 20px;
      font-weight: 300;
-     color: #071a52;
+     color: #00ffff;
      height: 60px;
      line-height: 60px;
-     background: #a7ff83;
+     background: #12131a;
      cursor: pointer;
      border-width: 2px 0 2px 0;
-     border: 1px solid #a7ff83;
+
      border-top-left-radius: 6px;
      border-top-right-radius: 6px;
 }
@@ -1406,9 +1406,9 @@ input[type=range].lower::-webkit-slider-runnable-track {
      top: 100%;
      left: 0;
      right: 0;
-     border: 2px solid #394a6d;
+     backdrop-filter: blur(5px);
      border-top: 0;
-     background: #17b978;
+     background: #00000091;
      transition: all 0.5s;
      opacity: 0;
      visibility: hidden;
@@ -1428,18 +1428,18 @@ input[type=range].lower::-webkit-slider-runnable-track {
      padding: 0 22px 0 22px;
      font-size: 22px;
      font-weight: 300;
-     color: #3b3b3b;
+     color: #ffffff;
      line-height: 60px;
      cursor: pointer;
      transition: all 0.5s;
 }
  .custom-option:hover {
      cursor: pointer;
-     background-color: white;
+color: #00ffff;
 }
  .custom-option.selected {
      color: white;
-     background-color: #17b978;
+     color: #00ff80;
    opacity: 0.8;
 }
 .arrow {
@@ -1458,12 +1458,12 @@ input[type=range].lower::-webkit-slider-runnable-track {
  .arrow::before {
      left: -5px;
      transform: rotate(-45deg);
-     background-color: #394a6d;
+     background-color: #00ffff
 }
  .arrow::after {
      left: 5px;
      transform: rotate(45deg);
-     background-color: #394a6d;
+     background-color: #00ffff;
 }
  .open .arrow::before {
      left: -5px;
