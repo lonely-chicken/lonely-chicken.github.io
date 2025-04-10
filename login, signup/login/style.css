@@ -1,11 +1,11 @@
 @font-face {
-    font-family: blod;
-    src: url(font/Bold.woff2);
+    font-family: yekan;
+    src: url(font/Yekan.ttf);
   }
 
 body{
-    font-family: 'blod', sans-serif;
-    background: #000000;
+    font-family: 'yekan', sans-serif;
+    background: #12131a;
 }
 .bg-holder{
     position: absolute;
@@ -32,21 +32,12 @@ a:hover{
 }
 .btn-outline-custom{
    border-radius: 50px; 
-   border: 1px solid #00ff00;
+border: none;
    color: #ffffff;
    transition: 0.5s;
 }
-.btn-outline-custom:hover{
-background: #00ff00;
-    color: #000000;
-    border-color: #00ff00;
-    transform: scale(1.1);
-}
-.btn-outline-secondary {
-    --bs-btn-active-color: #000000;
-    --bs-btn-active-bg: #00ff00;
-    --bs-btn-active-border-color: #000000;
-}
+
+
 .divider-content-center{
     position: absolute;
     top: 50%;
@@ -54,10 +45,10 @@ background: #00ff00;
     transform: translate(-50%, -50%);
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    background-color: #000000;
+    background-color: #12131a;
     font-size: 0.8rem;
     font-weight: 500;
-    color: #00ff00;
+    color: #00ffff;
 }
 .divider{
     margin: 2rem 0;
@@ -65,39 +56,41 @@ background: #00ff00;
 }
 .form-control{
     color: #ffffff;
-background: #000000;
-border: 1px solid #00ff00;
+background: #12131a;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 14px 28px 0px, rgba(0, 0, 0, 0.12) 0px 10px 10px;
 border-bottom-right-radius: 50px;
 border-top-right-radius: 50px;
+border: none;
 }
 .form-control:focus{
-    color: #00ff00;
-    background: #000000;
-    box-shadow: none;
-    border: 1px solid #00ff00;
+    color: #00ffff;
+background: #12131a;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 14px 28px 0px, rgba(0, 0, 0, 0.12) 0px 10px 10px;
+
 }
 .form-control::placeholder{
     color: #ffffff;
 }
 .input-group-text{
-    background: #00ff00;
-    border: 1px solid #00ff00;
+    background: #00ffff;
+color: #000;
+border: none;
 }
 .form-check-input{
     background-color: #000000;
     border: 1px solid #00ff00;
 }
 .form-check-input:focus{
-    border-color: #00ff00;
-    background: #000000;
-    box-shadow: 0 0 0 0.25rem rgba(0,255,0,.25);
+    border-color: #00ff80;
+    background: #12131a;
+    box-shadow: none;
 }
 .form-check-input:checked {
-    background-color: #00ff00;
-    border-color: #00ff00;
+    background-color: #00ff80;
+    border-color: #00ff80;
 }
 h3{
-    color: #00ff00;
+    color: #00ff80;
 }
 .text-secondary {
     color: rgb(255 255 255) !important;
@@ -108,35 +101,42 @@ h3{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.btn-primary{
-    --bs-btn-bg: #000000;
-    --bs-btn-border-color: #00ff00;
-    --bs-btn-hover-color: #000000;
-    --bs-btn-hover-bg: #00ff00;
-    --bs-btn-hover-border-color: #000000;
-    --bs-btn-active-color: #000000;
-    --bs-btn-active-bg: #00ff00;
-    --bs-btn-active-border-color: #000000;
+.loginbtn{
+background: #00ffff;
     border-radius: 50px;
     transition: 0.5s;
+    width: 50%;
 }
-.btn-primary:hover{
+.loginbtn:hover{
     transform: scale(1.1);
+    background: #00ffff;
+    border: none;
+}
+.loginbtn:active{
+    background: #00ffff !important;
+    border: none;
+}
+.loginbtn:focus{
+    background: #00ffff;
+    border: none;
 }
 a{
-    color: #00ff00;
+    color: #00ffff;
 }
 a:hover{
-    color: #00ff00;
+    color: #00ffff;
 }
 small{
     color: #ffffff;
 }
 .text-danger{
-    color: #00ff00 !important;
+    color: #000000 !important;
     transition: 0.5s;
 }
 .btn-outline-secondary:hover .text-danger{
 color: #000000 !important;
 }
 
+.btn-center{
+    text-align: center;
+}

@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="vid.css">
+  <link rel='stylesheet' href='video.css'>
 
   <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
   <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
@@ -11,33 +11,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container mani">
-    <div class="row align-items-center justify-content-center videop">
-
-
-  <video
-  id="my-video"
-  class="video-js"
-  controls
-  preload="auto"
-
-  height="264"
-  poster="../image/logo/logo-no-background.png"
-  data-setup="{}"
->
-  <source src="../video saver/e93970dSG127Yu6Uo8ho9nZ0y04c9z.mp4" type="video/mp4" />
-  <source src="MY_VIDEO.webm" type="video/webm" />
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a
-    web browser that
-    <a href="https://videojs.com/html5-video-support/" target="_blank"
-      >supports HTML5 video</a
-    >
-  </p>
-</video>
-
-</div>
-</div>
+    <div class="container">
+        <video 
+        controls
+             crossorigin
+             playsinline
+             data-poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" class="js-player">
+   <!-- Video files -->
+             <source
+               src="video_2025-04-10_08-16-13.mp4"
+               type="video/mp4"
+               size="576"
+             />
+             <source
+               src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
+               type="video/mp4"
+               size="720"
+             />
+             <source
+               src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"
+               type="video/mp4"
+               size="1080"
+             />
+ 
+     
+ 
+ </video>
+    </div>
 
 <div class="position-relative">
   <hr class="text-secondary divider">
@@ -81,6 +81,7 @@
     </div>
   </div>
 </div>
+<script src='video.js'></script>
 <script src="script.js"></script>
 <script src="../jy/bootstrap.bundle.min.js"></script>
 <script src="main.js"></script>
